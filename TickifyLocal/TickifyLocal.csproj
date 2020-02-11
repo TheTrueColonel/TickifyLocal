@@ -2,10 +2,10 @@
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFramework>netcoreapp2.2</TargetFramework>
         <AssemblyName>Tickify</AssemblyName>
         <RootNamespace>Tickify</RootNamespace>
         <LangVersion>8</LangVersion>
+        <TargetFrameworks>netcoreapp2.2;netcoreapp3.1</TargetFrameworks>
     </PropertyGroup>
 
     <ItemGroup>
