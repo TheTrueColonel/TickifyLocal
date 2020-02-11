@@ -1,0 +1,6 @@
+{
+  "token": "You Bot Token",
+  "commandPrefix": "!",
+  // https://www.connectionstrings.com/mysql/ Use this website to figure out your connection string
+  "connectionString" : "Server=localhost;Database=Tickify;User=root;"
+}
