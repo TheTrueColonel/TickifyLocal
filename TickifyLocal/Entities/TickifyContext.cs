@@ -1,12 +1,23 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace Tickify.Entities {
     public class TickifyContext : DbContext {
         public DbSet<Guild> Guilds { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
 
+        private readonly string _connectionString;
+        
+        public TickifyContext() : base() {
+            var builder = new ConfigurationBuilder();
+            builder.AddJsonFile("appsettings.json", optional: false);
+
+            var configuration = builder.Build();
+            _connectionString = configuration.GetConnectionString("MySQLConnection");
+        }
+
         protected override void OnConfiguring (DbContextOptionsBuilder optionsBuilder) {
-            optionsBuilder.UseMySql(Program.Settings.ConnectionString);
+            optionsBuilder.UseMySql(_connectionString);
         }
 
         protected override void OnModelCreating (ModelBuilder modelBuilder) {

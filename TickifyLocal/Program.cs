@@ -10,8 +10,6 @@ using Newtonsoft.Json;
 using Tickify.Deserialized;
 using Tickify.Services;
 
-// https://discordapp.com/oauth2/authorize?client_id=671898110276141076&scope=bot&permissions=268463120
-
 namespace Tickify {
     public class Program {
         private CommandService _commandService;
